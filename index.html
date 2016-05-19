@@ -37,6 +37,70 @@
           </ul>
         </section>
         <section>
+          <h1>Strict Mode</h1>          
+          <h3>Declaração</h3>
+          <pre class="fragment">
+            <code data-trim>
+              'use strict';
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h3>Declaração Obrigatória de Variáveis</h3>
+          <section>
+            <h4 class="fragment">Errado</h4>
+            <pre class="fragment">
+              <code data-trim class="fragment highlight-red">
+                function f() {
+                  a = 10;
+                }
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h4 class="fragment">Certo</h4>
+            <pre class="fragment">
+              <code data-trim>
+                function f() {
+                  var a = 10;
+                }
+              </code>
+            </pre>
+          </section>
+        </section>
+        <section>
+          <h3>Declaração de funções no nível mais alto de um escopo</h3>
+          <section>
+          <h4 class="fragment">Errado</h4>
+          <pre class="fragment">
+            <code data-trim class="fragment highlight-red">
+              function f() {
+                if(a === 5) {
+                  function g() {
+                    ...
+                  }
+                }
+              }
+            </code>
+           </pre>
+           </section>
+           <section>
+           <h4 class="fragment">Certo</h4>
+           <pre class="fragment">
+             <code data-trim>
+               function f() {
+                 function g() {
+                   ...
+                 }
+                 if(a === 5) {
+                   ...
+                 }
+               }
+             </code>
+           </pre>
+           </section> 
+        </section>        
+        <section>
           <h2>Novidades ES6 <span class="fragment">(ES2015)</span></h2>
           <ul>
             <li class="fragment">let / const</li>
